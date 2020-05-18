@@ -30,6 +30,4 @@ public class Furniture {
                 ", square=" + areaOfFurniture +
                 '}';
     }
-
-
 }

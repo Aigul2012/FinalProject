@@ -19,9 +19,6 @@ public class Main {
         room1.describe();
         System.out.println("Комната №2");
         room2.describe();
+
     }
-
-
-
-
 }

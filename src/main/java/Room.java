@@ -1,6 +1,5 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.ArrayList;
 
 public class Room {
@@ -50,15 +49,6 @@ public class Room {
         this.lightBulbs = lightBulbs;
     }
 
-    @Override
-    public String toString() {
-        return "Room{" +
-                "name='" + name + '\'' +
-                ", area=" + area +
-                ", numberOfWindows=" + numberOfWindows +
-                '}';
-    }
-
     public void addLightBulb(LightBulb lightBulb) {
         lightBulbs.add(lightBulb);
     }
@@ -69,6 +59,15 @@ public class Room {
 
     public ArrayList<Furniture> getListOfFurniture() {
         return listOfFurniture;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "name='" + name + '\'' +
+                ", area=" + area +
+                ", numberOfWindows=" + numberOfWindows +
+                '}';
     }
 
     public void describe() throws IlluminationTooMuchException, SpaceUsageTooMuchException {
@@ -88,9 +87,9 @@ public class Room {
             totalRoomIllumination = getNumberOfWindows() * ONE_WINDOW_ILLUMINATION + totalLightBulbsIllumination;
             if (totalRoomIllumination >= HIGH_BOUNDARY_ROOM_ILLUMINATION) {
                 logger.error("IlluminationTooMuchException is up");
-                throw new IlluminationTooMuchException("Слишком много света");
+                throw new IlluminationTooMuchException("Слишком много света в комнате");
             } else {
-                logger.info("ОБщее освещение комнаты " + totalRoomIllumination + " = " + getNumberOfWindows() + " окна по " + ONE_WINDOW_ILLUMINATION + " лк, и " + getLightBulbs().size() + " лампочки");
+                logger.info("Общее освещение комнаты " + totalRoomIllumination + " = " + getNumberOfWindows() + " окна по " + ONE_WINDOW_ILLUMINATION + " лк, и " + getLightBulbs().size() + " лампочки");
             }
         } else {
             totalRoomIllumination = getNumberOfWindows() * ONE_WINDOW_ILLUMINATION;
@@ -121,6 +120,3 @@ public class Room {
         }
     }
 }
-
-
-

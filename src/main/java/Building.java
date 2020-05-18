@@ -6,10 +6,5 @@ public class Building {
     public void addRoom(Room room){
         rooms.add(room);
     }
-
-    public ArrayList<Room> getRooms(String name) {
-        return rooms;
-    }
-
 }
 
