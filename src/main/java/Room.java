@@ -93,11 +93,11 @@ public class Room {
             }
         } else {
             totalRoomIllumination = getNumberOfWindows() * ONE_WINDOW_ILLUMINATION;
-            if (totalRoomIllumination > HIGH_BOUNDARY_ROOM_ILLUMINATION) {
+            if (totalRoomIllumination >= HIGH_BOUNDARY_ROOM_ILLUMINATION) {
                 logger.error("IlluminationTooMuchException is up");
                 throw new IlluminationTooMuchException("Слишком много света");
             } else {
-                logger.info("Общее освещение комнаты " + totalRoomIllumination);
+                logger.info("Общее освещение комнаты " + totalRoomIllumination + " = " + getNumberOfWindows() + " окна по " + ONE_WINDOW_ILLUMINATION + " лк");
             }
         }
         if (getListOfFurniture().size()>0){
