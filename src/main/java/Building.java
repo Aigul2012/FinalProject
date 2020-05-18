@@ -6,5 +6,11 @@ public class Building {
     public void addRoom(Room room){
         rooms.add(room);
     }
+
+    public void describe() throws IlluminationTooMuchException, SpaceUsageTooMuchException {
+        for(Room room: rooms){
+            room.describe();
+        }
+    }
 }
 

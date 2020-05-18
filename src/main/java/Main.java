@@ -4,6 +4,9 @@ public class Main {
         Building building = new Building();
         Room room1 = new Room("Room1", 100, 3);
         Room room2 = new Room("Room2", 5, 2);
+        System.out.println(room1);
+
+
         LightBulb lightBulb1 = new LightBulb(150);
         LightBulb lightBulb2 = new LightBulb(250);
         Furniture furniture1 = new Furniture("Cтол письменный", 3);
@@ -15,10 +18,6 @@ public class Main {
         room1.addFurniture(furniture1);
         room1.addFurniture(furniture2);
         System.out.println("Здание №1: ");
-        System.out.println("Комната №1");
-        room1.describe();
-        System.out.println("Комната №2");
-        room2.describe();
-
+        building.describe();
     }
 }

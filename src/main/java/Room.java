@@ -6,7 +6,7 @@ public class Room {
     private String name;
     private int area;
     private int numberOfWindows;
-    private int totalRoomIllumination = 0;
+
     private Logger logger = LogManager.getLogger();
     private ArrayList<LightBulb> lightBulbs = new ArrayList<LightBulb>();
     private ArrayList<Furniture> listOfFurniture = new ArrayList<Furniture>();
@@ -64,7 +64,7 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" +
-                "name='" + name + '\'' +
+                "nameee='" + name + '\'' +
                 ", area=" + area +
                 ", numberOfWindows=" + numberOfWindows +
                 '}';
@@ -79,6 +79,7 @@ public class Room {
         float percentageOfCoveredArea=0;
         float freeSpace;
         float percentageOfFreeSpace=0;
+        int totalRoomIllumination = 0;
 
         if (getLightBulbs().size() > 0) {
             for (int i = 0; i <= getLightBulbs().size() - 1; i++) {
